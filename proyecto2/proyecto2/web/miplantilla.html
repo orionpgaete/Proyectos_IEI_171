@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi plantilla</title>
+</head>
+<body>
+    <h2 style="color: red">Hola Alumnos estas contruyendo nuestra primera plantilla</h2>
+
+    <p>El nombre del alumnos es: {{nom_persona}} {{apel_persona}}</p>
+    <p>Fecha actual {{fecha_actual.day}}-{{fecha_actual.month}}-{{fecha_actual.year}} y la hora es {{fecha_actual.hour}}:{{fecha_actual.minute}}</p>
+    <p>{{temas.2}}</p>
+
+    <p><strong>Temas del Curso:</strong>
+        <ul>
+            {% if temas %}
+                {% for elTema in temas%}
+                    <li>{{elTema}}</li>
+                {% endfor %}
+            {% else%}
+                <p>No hay elementos en la lista</p>
+            {%endif%}
+        </ul>
+
+    </p>
+</body>
+</html>
