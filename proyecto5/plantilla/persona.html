@@ -9,6 +9,9 @@
   </head>
     </head>
     <body class="container mt-5">
+        <div class="alert alert-success d-1">LISTADO de EMPLEADOS</div>
+
+        {% if persona %}
         <table class="table">
             <thead>
                 <tr>
@@ -19,13 +22,18 @@
                 </tr>
             </thead>
             <tbody>
+                {% for per in persona %}
                 <tr>
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Email</th>
-                    <th>Fono</th>
+                    <td scope ="row">{{ per.id}}</td>
+                    <td>{{ per.nombre}}</td>
+                    <td>{{ per.email}}</td>
+                    <td>{{ per.fono}}</td>
                 </tr>
+                {% endfor %}
             </tbody>            
         </table>    
+        {% else %}
+            <div class="alert alert-info">No hay personas que mostrar</div>
+        {% endif %}
     </body>
 </html>
