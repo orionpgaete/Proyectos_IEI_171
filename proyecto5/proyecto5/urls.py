@@ -23,4 +23,7 @@ urlpatterns = [
     path('persona/', views.persona),
     path('', views.index),
     path('listaproyecto/', views.listaproyecto),
+    path('agregar/', views.agregarproyecto),
+    path('eliminar/<int:id>', views.eliminarproyecto),
+    path('actualizar/<int:id>', views.actualizarproyecto),
 ]
